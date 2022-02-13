@@ -1,0 +1,82 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use Laravel\Sanctum\HasApiTokens;
+
+class User extends Authenticatable
+{
+    use HasApiTokens, HasFactory, Notifiable;
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+    public function address (){
+        return $this->hasOne(Address::class , 'user_id');
+    }
+    public function addresses (){
+        return $this->hasMany(Address::class , 'user_id');
+    }
+
+    public function role(){
+        return $this->belongsToMany(role::class , 'user_role' , 'user_id' , 'role_id');
+    }
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+    public function IsAdmin (){
+        if($this->role()->first()->name == 'subscriber' ){
+            echo 'user is subscriber';
+        }
+        else{
+        echo 'user is not subscriber';}
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    protected $fillable = [
+        'name',
+        'email',
+        'password',
+    ];
+
+    /**
+     * The attributes that should be hidden for serialization.
+     *
+     * @var array<int, string>
+     */
+    protected $hidden = [
+        'password',
+        'remember_token',
+    ];
+
+    /**
+     * The attributes that should be cast.
+     *
+     * @var array<string, string>
+     */
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+    ];
+}
