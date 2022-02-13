@@ -1,0 +1,20 @@
+#prevent Directory Listing
+
+Options -Indexes
+
+# Output of errors in PHP_errors.log and display on the site
+# ~/public_html/PHP_errors.log full path to the file you created
+
+php_flag display_startup_errors off
+php_flag display_errors off
+php_flag html_errors off
+php_flag log_errors onff
+php_flag ignore_repeated_errors off
+php_flag ignore_repeated_source off
+php_flag report_memleaks off
+php_flag track_errors off
+php_value docref_root 0
+php_value docref_ext 0
+php_value error_log ~/public_html/PHP_errors.log
+php_value error_reporting -1
+php_value log_errors_max_len 0

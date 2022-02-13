@@ -1,0 +1,338 @@
+:root
+{
+    --backgroundcolor:#fff;
+    --fontcolor:#fff;
+    --secondback:#3b5998;
+    --hovercolor:#37496F;
+    --fontfile:#000;
+}
+body{
+    background: var(--backgroundcolor);
+    position: relative;
+}
+#prelink
+{
+    display: flex;
+    justify-content: center;
+}
+.container .link  /*course.php*/
+{
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 65%;
+}
+.container .link a {
+    margin: 0 15px;
+    margin-bottom: 20px;
+    height: 74px;
+    color: var(--fontcolor);
+    background: var(--secondback);
+    border-radius: 20px;
+    margin-top: 75px;
+    padding: 20px;
+    border: none;
+    font-size: 30px;
+    font-weight: 300;
+    font-style: italic;
+    text-decoration: none;
+}
+.form1{
+    margin: 60px auto 0;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    align-content: center;
+    flex-direction: column;
+}
+.form1 input{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 161px;
+    height: 74px;
+    color: var(--fontcolor);
+    background: var(--secondback);
+    border-radius: 20px;
+    margin-bottom: 75px;
+    padding: 20px;
+    border: none;
+    font-size: 30px;
+    font-weight: 300;
+    font-style: italic;    
+}
+.form1 input:hover
+{
+    background:var(--hovercolor);
+    transform:scale3d(1.1, 1.1,5);
+}
+.return
+{
+    background: var(--secondback);
+    font-size: 30px;
+    border-radius: 20px;
+    padding: 20px;
+    width: fit-content;
+    margin: 20px auto;
+}
+.return i{
+    color: var(--fontcolor);
+}
+.return:hover
+{
+    background:var(--hovercolor);
+    transform:scale3d(1.1, 1.1,5);
+}
+.file {
+    border-bottom: solid 1px var(--secondback);
+    padding-bottom: 20px;
+    direction: rtl;
+    margin: 60px 0;
+}
+.thetext i{
+    font-size: 40px;
+    position: relative;
+    top: 10px;
+    margin-left: 20px;
+    color: var(--secondback);
+}
+.thetext{
+    position: relative;
+}
+.thetext a {
+    position: absolute;
+    top: 50%;
+    right: 80%;
+    font-size: 20px;
+}
+.thetext a:last-child { 
+    right:20%;
+    color:var(--fontfile);
+    text-decoration: none;
+}
+.file .date{
+    font-size: 20px;
+    color: var(--fontfile);
+    font-weight: 400;
+}
+.file .discription{
+    margin:20px 0;
+    font-size: 20px;
+    color: var(--fontfile);
+    font-weight: 400;
+    border-right: solid 1px var(--secondback);
+    padding-right: 10px;
+}
+.file .name{
+    margin: 30px 0;
+    font-size: 20px;
+    color: var(--fontfile);
+    font-weight: 400;
+    border-right: solid 1px var(--secondback);
+    padding-right: 10px;
+}
+footer
+{
+    height: auto;
+    width: 98%;
+    background: var(--secondback);
+    padding: 25px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin: 8px auto;
+}
+footer p {
+    color:var(--fontcolor);
+    font-size: 18px;
+    font-weight: 200;
+    direction: rtl;
+    font-style: italic;
+    word-spacing: 3px;
+}
+footer p span{
+    color: #19443c;
+    font-weight: 900;
+    font-size: smaller;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+footer form{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 30px;
+    direction: rtl;
+    font-size: 20px;
+    width: 80%;
+}
+footer form textarea {
+    width: fit-content;
+    border-radius: 5px;
+    padding: 30px;
+}
+footer form div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+footer form div input {
+    margin: 20px;
+    width: fit-content;
+    border-radius: 5px;
+    padding: 5px;
+} 
+.scrollbutton
+{
+    background: var(--secondback);
+    font-size: 30px;
+    border-radius: 20px;
+    padding: 20px;
+    width: fit-content;
+    color: var(--fontcolor);
+    position: fixed;
+    bottom: 12%;
+    right: 7%;
+}
+
+.scrollbutton:hover
+{
+    background:var(--hovercolor);
+    transform:scale3d(1.1, 1.1,5);
+}
+.header
+{
+    height: auto;
+    width: 98%;
+    background: var(--secondback);
+    padding: 15px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    position: relative;
+    top: 8px;
+    left: 1%;
+    font-size: 40px;
+    font-weight: 900;
+    direction: rtl;
+    word-spacing: 8px;
+    color: var(--fontcolor);
+    margin-bottom: 70px;
+    position: relative;
+}
+.header .menu /* menu icon */
+{
+    position: absolute;
+    right: 7%;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--fontcolor);
+}
+.header .home /* home icom */
+{
+    position: absolute;
+    left: 7%;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--fontcolor);
+}
+.header .thelistclass
+{
+    background: var(--hovercolor);
+    position: absolute;
+    top: 110%;
+    right: 0%;
+    padding: 25px 35px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+.header .thelistclass2
+{
+    background: var(--hovercolor);
+    position: absolute;
+    top: 110%;
+    right: 0%;
+    padding: 25px 35px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+}
+.header div a
+{
+    text-decoration: none;
+    color: var(--fontcolor);
+    font-size: 25px;
+    font-weight: 100;
+}
+.header div ul
+{
+    list-style: none;
+}
+.header div p
+{
+    margin: 20px;
+    font-size: 32px;
+}
+.animation
+{
+  width:100px;
+  margin: 50px auto;
+  display:flex;
+  justify-content: space-between;
+  position: fixed;
+  top: 30%;
+  right: 50%;
+  transform: translateX(50%);
+}
+.animation div
+{
+  background: var(--hovercolor);
+  border-radius: 100%;
+  width:20px;
+  height: 20px;
+  animation-name: loading;
+  animation-duration: 0.3s;
+  /*animation-fill-mode:backwards;*/
+  animation-iteration-count:infinite;
+  /*animation-play-state:running;*/
+  /*animation-timing-function:ease-in-out;  */
+  animation-direction:alternate;
+}
+.animation div:nth-child(2)
+{animation-delay:0.1s;}
+.animation div:last-child
+{animation-delay:0.2s;}
+@keyframes loading
+{
+  100%   {
+    transform: translatey(-20px);
+    opacity:0.4;
+  }
+}
+.sucess 
+{
+    position: fixed;
+    bottom: 5%;
+    left: 5%;
+    background: #00ff00b8;
+    color : black;
+    padding: 15px;
+    border-radius: 12px;
+    font-size: 120%;
+}

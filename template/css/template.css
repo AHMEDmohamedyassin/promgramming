@@ -1,0 +1,328 @@
+/*start variable */
+/*end variables */
+/*start global rules */
+*
+{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body
+{
+    font-family:"work sans", sans-serif;
+}
+.container
+{
+    margin-left:auto;
+    margin-right:auto;
+    padding-left:15px;
+    padding-right:15px;
+}
+/*علشان يظبط العرض علي الشاشات المختلفة*/
+/*small width*/
+@media (min-width:768px)
+{
+    .container
+    {
+        width:750px;
+    }
+}
+/*medium width*/
+@media (min-width:992px)
+{
+    .container
+    {
+        width:970px;
+    }
+}
+/*large width*/
+@media (min-width:1200px)
+{
+    .container
+    {
+        width:1170px;
+    }
+}
+.specialhead
+{
+   color:#DDD;
+   text-align: center;
+   margin:0;
+    letter-spacing: -5px;
+   font-size: 100px;
+   font-weight: 800;
+}
+.specialhead + p
+{
+    text-align: center;
+    color: #AAA;
+    margin-top: -35px;
+    font-size: 17px;
+    max-width:100%;
+}
+
+/*end global rules */
+/*  start head  */
+.header
+{
+    padding:20px;
+}
+.header .container
+{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header .links
+{
+    position:relative;
+}
+.header .links .icon
+{
+    width:30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+.header .links .icon span
+{
+    background:#333;
+    margin-bottom:5px;
+}
+.header .links .icon span:first-child
+{
+    width:100%;
+    height:3px;
+}
+.header .links .icon span:nth-child(2)
+{
+    width:60%;
+    height:3px;
+    transition: 0.3s;
+}
+.header .links .icon span:last-child
+{
+    width:100%;
+    height:3px;
+}
+.header .links:hover .icon span:nth-child(2) /*hover معمولة كده علشان التأثير يأخذ القيمة كلها*/
+{
+    width:100%;
+}
+.header .container .logo
+{
+    width:50px;
+    height:50px;
+}
+.header .container .links ul li a
+{
+    display:block;
+    text-decoration:none;
+    color:#000;
+    padding:10px;
+    transition:0.3s;
+}
+.header .container .links ul li:not(:last-child)
+{
+    border-bottom:#000 solid 2px;
+
+}
+.header .container .links ul li
+{
+    margin-bottom: 5px;
+}
+.header .container .links ul
+{
+    background: #EEE;
+    padding:9px;
+    list-style: none;
+    position: absolute;
+    right:0px;
+    margin:0px;
+    min-width: 200px;
+    top:calc(100% + 15px);
+    display :none;
+    z-index: 1;
+}
+.header .container .links:hover ul
+{
+    display: block;
+}
+.header .container .links ul li a:hover
+{
+    padding-left:20px;
+}
+.header .container .links ul:before /*هذا للسهم*/
+{
+    content:"";
+    border:#EEE solid 10px;
+    border-color:transparent transparent #EEE transparent;
+    position: absolute;
+    right:5px;
+    top:-20px;
+}
+
+/*  end head   */
+/*Start landing*/
+.landing
+{
+    background:#6f89b0;
+    background-size:cover;
+    position:relative;
+    height: calc(100vh - 90px);
+}
+.landing .intro_text h1
+{
+    margin:0px;
+    text-align: center;
+    color: #35a4af;
+}
+.landing .intro_text p
+{
+    text-align: center;
+}
+.landing .intro_text
+{
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    width: 320px;                   
+}
+/* end landing*/
+
+/*start feature*/
+.features
+{
+    background: #eee;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+.features .container
+{
+       display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+}
+.features .container .feat
+{
+    padding:20px;
+    text-align: center;
+}
+.features .container .feat h3
+{
+    font-weight:800;
+    text-align: center;
+    color: #35a4af;
+}
+.features .container .feat p
+{
+    font-weight:500;
+    color:#AAA;
+    text-align: center;
+    line-height: 30px;
+}
+.features .container .feat i
+{
+   font-size: 60px;
+    color: #35a4af;
+}
+}
+/*end feature*/
+/* start services */
+.services {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+.services .container
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    padding-top:100px;
+}
+.services .container .col .box
+{
+    text-align: center;
+    display: flex;
+}
+.services .container .col .box h3
+{
+    text-align: center;
+    color: #35a4af;
+    font-size: 30px;
+    margin:0px;
+}
+.services .container .col .box p
+{
+    text-align: center;
+    color: #777;
+    line-height: 40px;
+}
+.services .container .col .box i
+{
+    color:#35a4af;
+    margin: 0px;
+    font-size: 50px;
+    position: relative;
+}
+.services .container .col .image
+{
+    width: 400px;
+    height: 300px;
+    padding:20px;
+    margin-top: 20px;
+    position: relative;
+    
+}
+.services .container .col .image img
+{
+    width:100%;
+    height: 100%;
+}
+.services .container .col .image:after
+{
+    content: '';
+    background: #999;
+    width:200px;
+    height: calc(100% + 80px);
+    position: absolute;
+    top:-40px;
+    right: -20px;
+    z-index: -1;
+    }
+/* end services */
+/* start about */
+.about
+{
+   padding-top: 60px;
+   padding-bottom: 60px;
+}
+.about .container
+{
+display:flex;
+}
+.about .container .colum:first-child
+{
+   /*padding-right:50px;*/
+       flex-basis: calc(100% + 300px);
+}
+.about .container .colum:last-child
+{
+   padding-top:25px;
+   max-width: 100%
+}
+.about .container .colum hr
+{
+   background: #35a4af;
+   max-width: 50%;
+   height: 2px;
+}
+@media(max-width:1000px)
+{
+   .about .container
+{
+display:flex;
+flex-direction: column;
+}
+}
+/* end about */
+

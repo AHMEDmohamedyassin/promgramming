@@ -1,0 +1,51 @@
+// php artisan route:list (in terminal)
+// php artisan serve --port 4
+// php artisan make:controller [controller_name]
+// php artisan make:controller --resource [controller_name]
+
+// php artisan route:list
+
+// composer require laravel/ui
+// php artisan ui vue --auth
+// npm install && npm run dev
+
+// php artisan migrate
+// php artisan make:migration [migration name] --create="[table name]"   لإنشاء جدول
+// php artisan make:migration [migration name] --table="[table name]"    لإضافة عمود في الجدول دون حذف البيانات بداخله
+
+// composer require laravel/ui --dev
+// php artisan ui vue --auth
+// php artisan ui bootstrap
+
+// php artisan make:middleware [name]
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////DATABASE RELATIONS::
+return $this->hasone('App\Models\Posts' , 'user_id' , 'id');
+return $this->hasMany('App\Models\Posts' , 'user_id' , 'id'); // 'user_id' in post table and 'id' in user table
+////return $this->belongsTo(User::class , 'user_id');  // for one to one relationship or one to many
+
+
+return $this->belongsToMany(Role::class)->withpivot('created_at'); // withpivote حتي يظهر الوقت
+return $this->belongsToMany(User::class);      
+////يوجد جدول وسيط اسمه role_user                      many to many relation
+
+
+return $this->morphMany(Photo::class , 'imageable');
+////return $this->morphTO();
+
+
+        return $this->hasManyThrough(Posts::class , User::class);
+        // return $this->hasManyThrough(Posts::class , User::class , 'country_id' , 'user_id');
+        // posts::class => class where posts found 
+        // user::class  => intermidiate class
+        // country_id   => column in user table     
+        // user_id      => user column in post table
+
+return $this->morphToMany(Video::class , 'taggable');
+return $this->morphToMany(Tag::class , 'taggable');
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+one to one and one to many   user and address
+many to many                 user and role and user_role

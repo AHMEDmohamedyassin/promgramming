@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="descripsion" content="welcom to my web">
+    <title>malazem</title>
+    <link href="stylefolder/all.min.css" type="text/css" rel="stylesheet">
+    <link href="stylefolder/mediacontainer.css" type="text/css" rel="stylesheet">
+    <link href="stylefolder/normalize.css" type="text/css" rel="stylesheet">
+    <link href="stylefolder/style3.css" type="text/css" rel="stylesheet">
+    <style>
+        footer{
+            position:fixed;
+            bottom:0px;
+            right:1%;
+        }
+        footer a{
+            color:#564F60;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <div class="header"> اختر كليتك 
+        <!-- <div class="thelist"><i class="fas fa-bars nohovers"></i><i class="fas fa-stream hovers"></i></div> -->
+        </div>
+        <div class="container">
+            <form class="form1" method="POST" action="phpuserfolder/collagechoosen.php">
+                <input type="submit" name="engineer" value="كلية الهندسة"> </input>
+                <input type="submit" name="hokok"    value="كلية حقوق">    </input>
+                <input type="submit" name="tigara"   value="كلية تجارة">   </input>
+            </form>
+        </div>
+    </div>
+    <footer>
+        <p>حقوق الطباعة و النشر <span><a href='../phpadminefolder/authorsignin.php'>©</a></span>  التاريخ  : <span>موقع ملازم</span> |  جميع الحقوق محفوظة | تصميم <span>م/أحمد</span></p>
+    </footer>
+</body>
+</html>

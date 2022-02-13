@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="descripsion" content="welcom to my web">
+        <title>ahmedpage</title>
+        <style>
+            blockquote
+            {
+                background:#333;
+                padding:10px
+            }
+            span
+            {
+                font-style:italic;
+                background:#555
+            }
+            div
+            {
+                font-size:large;
+                background:#555;
+                padding:20px;
+            }
+           tbody{font-style:italic}
+           thead{font-weight:bold}
+           table{width:300px; padding:20px; background:#888}
+           .ssttyle
+           {
+           color:green;
+           background:#EEE
+           }
+           iframe{width:400px; height:400px}
+        </style>
+        <!-- <script>alert("welcome to my page");</script> --> 
+    </head>
+    <body>
+        <h1>image</h1> <!-- image -->    <!-- image -->    <!-- image -->   <!-- image -->    <!-- image -->  <!-- image -->
+        <img src="ahmed.jpg" title="hello to ahmed" alt="ahmed" width="300" height="300">
+        <br>
+        <h2>link</h2>  <!-- links -->    <!-- links -->    <!-- links -->    <!-- links -->    <!-- links -->  <!-- links -->
+        <a href="http://WWW.google.com" target="_blank">google</a>
+        <p> ahmed mohamed yassin  <!-- paragraph ,span ,div , sub, sup,blockqoute --><!-- paragraph ,span ,div , sub, sup,blockqoute -->
+        <br><i>ahmed</i> <b>mohamed</b> <strong>yassin</strong>
+        <br>2<sup>5</sup>   ch<sub>4</sub>
+        <br>ahmed is very good person he is an <span>engineer</span> and he is excellent <span>programer</span>
+        <br> <div>it is div sentence</div>
+        <br>
+        <blockquote>this is ahmed page and it is good page  هذه جملة اقتباس</blockquote>
+        <br>
+        <q>ahmed is very good هذه جملة بفصلتين</q>
+        <br><del> هذه جملة محذوفة</del>
+        <br><ins> هذه جملة مضافة للنص</ins>
+        </p>
+        <br>
+        <h1>lists</h1>
+        
+        <!-- list -->   <!-- list -->    <!-- list -->   <!-- list -->    <!-- list -->
+       
+        <ul>
+            <li>ahmed</li>
+            <li>heba</li>
+        </ul>
+        <ol type="a" >
+            <li>ahmed</li>
+            <li>ahmed</li>
+            <li>ahmed</li>
+            <li>ahmed</li>
+            <li>ahmed</li>
+            <li>ahmed</li>
+
+        </ol>
+        <ol start="6" reversed>
+            <li>ahemd</li>
+            <li>heba</li>
+            <li>nour</li>
+        </ol>
+        <h3>describsion list</h3>
+        <dl>
+            <dt>html</dt>
+              <dd>easy good and its nice</dd>
+              <dt>html</dt>
+              <dd>easy good and its nice</dd>
+        </dl>
+       <br>
+       <h1>table</h1>
+       
+       <!-- table -->   <!-- table -->   <!-- table -->    <!-- table -->    <!-- table -->
+       
+       <table border="1">
+       <caption>programing languages</caption>       
+       <thead>
+       <tr>
+        <td colspan="2">c++</td>  <!-- table  colspan-->
+        <td>python</td>
+        <td>c#</td>
+       </tr>
+       </thead>
+       <tfoot>
+       <tr>
+        <td>dsefg</td>
+        <td>adf</td>
+        <td>adsf</td>
+        <td>gfdgh</td>
+       </tr>
+       </tfoot>
+       <tbody>
+       <tr>
+        <td rowspan="2">123</td>  <!-- table  rowspan-->
+        <td>4646</td>
+        <td>56563</td>
+        <td>464568</td>
+       </tr>
+       <tr>
+        <td>4646</td>
+        <td>56563</td>
+        <td>464568</td>
+       </tr>
+       </tbody>
+       </table>
+       
+       <!-- classes -->   <!-- classes -->   <!-- classes -->    <!-- classes -->    <!-- classes -->   <!-- classes -->
+       
+       <div class="ssttyle">this is div but with class </div>
+       <p>this is <span class="ssttyle">span</span> with the same class of div</p>
+       
+       <!--form -->   <!--form -->   <!--form -->   <!--form -->   <!--form -->   <!--form -->   <!--form -->  <!--form -->
+       <form name="register"> <!-- الكلام المكتوب هنا يستخدم أثناء البرمجة -->
+        <label>username</label>
+        <input type="text" value="username" placeholder="type your username" name="username" maxlength="10" >
+        <br><label>password</label>
+        <input type="password"  name="password">
+        <br> <input type="checkbox" > <label> remember me</label>
+        <br><input type="submit" value="enter">
+        <br><input type="reset" value="restart">
+        <br><input type="button" value="حلاوة روح">
+        <br> <label>upload cv</label> <input type="file" >
+       <br> <label>image</label> <input type="image" src="html.jpg" alt="html" width="100" height="100">
+       <br> <input type="hidden" value="testing">
+       <br>
+       <fieldset> <!-- fieldset and legends -->
+        <legend>favourits</legend>
+       <label>choose best browser</label><br>
+       <input type="radio" name="browser" value="chrome"><label>chrome</label> <br>
+       <input type="radio" name="browser" value="edge"><label>edge</label><br>
+       <input type="radio" name="browser" value="firefox"><label>firefox</label><br>
+       <br>
+       <label>choose best mobile</label> <br>
+       <input type="radio" name="mobile" value="iphone"><label>iphone</label><br>
+       <input type="radio" name="mobile" value="samsung"><label>samsung</label><br>
+       <input type="radio" name="mobile" value="huawei"><label>huawei</label><br>
+       <br>
+       </fieldset>
+       <textarea cols="30" rows="5"> your name is: </textarea>
+       <textarea readonly> you can not remove it:) </textarea>
+       <!--select --><!--select --><!--select --><!--select --><!--select --><!--select --><!--select --><!--select -->
+       
+       <select name="time" size="2" multiple> <!--name & value تخص فقط قاعدة البيانات -->
+        <optgroup  label="near time">
+            <option value="1" selected>day</option>
+            <option value="2">week</option>
+            <option value="3" disabled>month</option>
+        </optgroup>
+        <optgroup label="far time">
+            <option value="4">year</option>
+            <option value="5">2 year</option>
+            <option value="6">3 year</option>
+        </optgroup>
+       </select>
+       <hr/><hr/>
+       <hr/><hr/>
+       <hr/><hr/>
+       <input list="programming" name="prog">
+       <datalist id="programming" >
+           <option value="c++">
+           <option value="js">
+           <option value="html">
+           <option value="css">
+           <option value="php">
+           <option value="oop">
+       </datalist>
+
+       <input type="search">
+       </form>
+       <!--frame --><!--frame --><!--frame --><!--frame --><!--frame --><!--frame --><!--frame --><!--frame -->
+       <!-- <iframe name="elnakhile" src="https://www.elnekhelytechnology.com/" scrolling="auto"></iframe> -->
+       <!--space -->
+       <p> ahmed &nbsp;&nbsp;&nbsp;&nbsp;mohamed</p> <!-- non breaking space -->
+    </body>
+
+
+    <!-- html 5  -->
+    <p>this is my <b>book</b> </p>
+    <p>this is my <i>book</i> </p>
+    <p>this is my <em>book</em> </p>
+    <p>this is my <u>book</u> </p>
+    <p>this is my <small>book</small> </p>
+    <p>this is my <del>book</del> </p>
+    <p>this is my <mark>book</mark> </p> 
+
+
+    <audio controls>
+        <source src="a.mp3" type="audio/mpeg">  <!-- من موقع mime type -->
+    </audio>
+
+    <video controls>
+        <source src="https://video.fcai19-4.fna.fbcdn.net/v/t42.1790-2/272991979_322375073281080_4506977680504941380_n.mp4?_nc_cat=105&ccb=1-5&_nc_sid=985c63&efg=eyJ2ZW5jb2RlX3RhZyI6InN2ZV9zZCJ9&_nc_ohc=defRNVats7QAX8BlVLs&_nc_rml=0&_nc_ht=video.fcai19-4.fna&oh=00_AT95FZaqU7cHo0YVDzzA4fEnTNWtWR5nqzp0yUxfs29ipg&oe=61FDBA36">
+        <track src="file.vtt" kind="subtitles" srclang="ar" label="العربية">
+        <track src="file.vtt" kind="subtitles" srclang="ar" label="english">
+    </video>
+
+
+    <br>
+    <code>
+        cout<< "hello world";
+    </code>
+    
+    <pre>
+        hello 
+        this is 
+          pre formate
+    </pre>
+    
+    <embed src="file.pdf" width="2000px" height="1000">
+    <!-- form attriputes 
+    
+    minlength='19'
+    autofocus
+    hidden
+    disaple
+    maxlength=""
+    novalidate مش لازم تتملي علشان الفورم تتبعت
+    target لا يحزف البيانات عند ارسال الفورم
+    -->

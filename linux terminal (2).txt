@@ -1,0 +1,45 @@
+pwd : print working directory
+man : manual يظهر لي وظيفة الأوامر
+clear
+ls -alt   -h  
+cd   , cd ..  x  cd -  , cd ~ root
+mkdir : make directory
+touch : make text file
+nano :  محرر نصي للتعديل علي النص و يوجد غيره
+cat : show text files in terminal
+cp : copy  => cp  'file'  'path'
+mv : تحريك و إعادة تسمية                                                          mv a*.txt 'path'  تحريك كل الملفات التي تبدأ ب a 
+rm : remove حذف الملفات
+rm -rvi : حذف الفولدرات بالغير فارغة
+rmdir : remove directory
+echo : تعرض في ال terminal                                                    echo 'hello world' > hello.txt  تكتب كلمة و تحفظها في الملف و لكن سوف يحذف المحتوي
+>          حفظ                                                               echo 'hello world' >> hello.txt سوف يضيف دون حذف المحتوي
+>>         تعديل                                                              cat name.txt | grep -i "ahmed"   فتح الملف و البحث فيه و غير حساس
+grep          بحث                                                           cat name.txt | wc               word count يعد الحروف و الحمل و السطور
+wc               عد                                                         cat name.txt | wc > number.txt   يحفظ الأعداد في ملف
+sort             ترتيب                                                       cat name.txt | sort              ترتيب
+uniq  ترتيب                                                                  sort name.txt | uniq > uniqed.txt 
+grep -Rl 'الاسم الذي أبحث عنه'  , grep -R 'الاسم الذي ابحث عنه'
+sed       stream editor                                                     sed 's/ahmed/mohamed/' name.txt   تم تبديل كلمة أحمد بمحمد في ملف الاسماء
+
+
+alias ********************
+
+nano .bashrc  الدخول علي الملف من الروت
+
+alias l="ls"   ثم اضافة ذلك السظر مثلا و الخروج من الملف
+
+source .bachrc  كتابة ذلك السطر في الترمينال لتنشيط التعديل
+
+********************************
+whoami 
+adduser 'اسم المستخدم '
+su  == change user 
+lsof -i -p -n  لمراقبة النظام و معرفة اتصالاته بالنت و معرفة إذا كان مخترق 
+kill 'PID number here'  لإيقاف عملية معينة أو اختراق
+ctrl + alt + t    : open terminal 
+
+tcpdump -i -c 4 -n arp
+
+top بيانات عن القطع و الاستخدام
+htop
