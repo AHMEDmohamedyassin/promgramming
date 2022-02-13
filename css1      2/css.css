@@ -1,0 +1,205 @@
+body
+{
+    background:#DDD;
+    color:#DFD;
+}
+.fixed
+{
+    background:rgb(50,200,0);
+    position:relative;
+    color:#000;
+    bottom:40px; 
+}
+.parent
+{
+    background:#FFF;
+    width:600px;
+    height:600px;
+    padding:10px;
+    position:relative;/*أهميتها أن ال صغير يتحرك داخل الكبير*/
+}
+.child
+{
+    background:rgba(30,200,0,0.5);
+    width:100px;
+    right:20px;
+    position:absolute;/*أهميتها أن ال صغير يتحرك داخل الكبير*/
+}
+.float
+{
+    background:#EFEFEF;
+    color:black;
+}
+.left
+{
+    background:rgb(30,200,0);
+    width:200px;
+    margin:10px;
+    float:left;
+    font-size:32px
+}
+.right
+{
+    background:rgb(30,200,0);
+    width:200px;
+    margin:10px;
+    float:right;
+    font-size:32px
+}
+.clear
+{
+    clear:both;
+}
+/**************************************************************************************************/
+.class1,.class2,.class3
+{
+    background:#F00;
+    font-weight:900;
+    margin:10px;
+}
+.class1
+{
+    color:#FFF;
+}
+/******************************************************************************************************/
+.nesting p
+{
+    background-color:rgba(200,100,50,0.7) 
+}
+p
+{
+    width:200px;
+    height:50px;
+    background-color:#0F0;
+    color:#000;
+    overflow:auto;
+    /* overflow:visible;    standard state*/
+}
+/*visibility:hidden بتشيل العنصر لكن بتحفظ مكانه as display:non  تشيل العنص لا تحفظ مكانه */
+.div1,.div2,.div3
+{
+    width:100px;
+    height:100px;
+    position:absolute;
+}
+.div1
+{
+    background:#F00;
+    top:1300px;
+    z-index:1
+}
+.div2
+{
+    background:#0F0;
+    top:1350px;
+    left:50px;
+    z-index:2
+}
+.div3
+{
+    background:#00F;
+    top:1400px;
+    left:100px;
+    z-index:3;
+}
+.div1:after
+{
+    color:#0F0;
+    content:"this is content for z-index div"
+}
+/***************************************************************************************************************/
+.curso
+{
+    cursor:cell;
+    background:#F00;
+    width:100px;
+    height:40px;
+}
+.outlin
+{
+    color:#F00;
+    outline-color:#0F0;
+    outline-width:10px;
+    outline-style:solid;
+}
+.parent2
+{
+    width:400px;
+    position:absolute;
+    top:1600px;
+    background:#00F
+}
+.parent2 p
+{
+    background:#F00;
+}
+.parent2 aside p /*تحديد طفل داخل طفل*/
+{
+    color:black;
+}
+.parent2 div /*all childern inside parent div*/
+{
+    background:#0F0;
+    color:#000;
+}
+.parent2 > div /*direct child*/
+{
+    margin:10px;
+    color:#F00;
+}
+.parent2 aside
+{
+    background: #000;
+}
+
+/* *تدل علي جميع العناصر داخل الشي */
+/* p+div   يعني الصفات المطلوبة تنطبق علي أي باراجراف بعده ديف*/
+.parag
+{
+    position:absolute;
+    top:2000px;
+    width:auto;
+    height:auto;
+    background:#FFF;
+    padding:20px;
+}
+.parag:first-letter
+{
+    background:#F00;
+    color:#000;
+    margin:20px;
+    font-size:50px;
+    border-radius:10px;
+    padding:20px;
+}
+.parag:first-line
+{
+    color:#00F;
+}
+.spa
+{
+    position:absolute;
+    top:2300px;
+    color:#000;
+}
+aside:first-child span:first-child
+{
+    color:#F00;
+}
+a[title="welcom to google"]
+{
+    position:absolute;
+    top:2500px;
+}
+a[title="welcom to facebook"]
+{
+    position:absolute;
+    top:2500px;
+    left:100px;
+}
+a[title="welcom to whatsapp"]
+{
+    position:absolute;
+    top:2500px;
+    left:200px;
+}

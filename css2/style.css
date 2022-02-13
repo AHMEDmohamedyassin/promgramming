@@ -1,0 +1,341 @@
+*
+{
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+}
+:root /*variables*/
+{
+    --maincolor:#DDD;
+}
+.parent
+{
+    overflow: hidden;    
+    background: #F00;
+    width:400px;
+    margin: 20px auto;
+    padding: 20px;
+}
+.parent div
+{
+   background: var(--maincolor);
+    box-sizing: border-box;
+    margin-right: 2%;
+    margin-left: 2%;
+    width: calc(92% / 2);
+    padding: 20px;
+    text-align: center;
+    float: left;
+    transition-delay: 0.5s;
+    transition-duration: 0.5s;
+    transition-property: width;
+}
+.parent p
+{
+    clear: both;
+}
+.parent div:hover
+{
+    width:150px;
+}
+ /*start flex flex flex*/
+ /*
+display:flex;  ,  display:inline-flex;
+flex-direction:column;
+flex-wrap:no-wrap;
+justify-content:flex-start;
+align-items:flex-start;                                   for parent
+align-content:flex-start;                                 for parent
+align-self:auto;                                          for element    
+flex-grow:0;
+flex-shrink:1;
+order:1;
+flex-basis:300px;     >? it acts as width or height according to flex-direction
+*/
+.flex
+{
+    background: #DDD;
+    margin:100px auto;
+    padding:20px;
+    width:400px;
+    height: 500px;
+    display:flex;
+    flex-direction: row; /*row-reverse ,   column  ,   column-reverse*/
+    flex-wrap: wrap; /*wrap-roverse*/ /* ده علشان العناصر الزيادة تنزل تحت*/
+    /*flex-flow= [flex-direction + flex-wrap ]*/
+    /*justify-content :  center  flex-start    flex-end   space-between  space-evently  space-around*/
+    justify-content: space-evenly;
+    align-items: flex-end; /* flex-start  center*/ /* as justify content but it acts on items in rows*/
+    /* align-content: flex-start; */
+    position: relative;
+}
+.flex:before
+{
+    content:"";
+    background-image: linear-gradient(to right,#DDD,#AAA,#EEE,#000 );
+    position: absolute;
+    top: -11px;
+    left: 0px;
+    height: 5px;
+    width: 100%;
+}
+.flex div
+{
+    background: #AAA;
+    padding:20px;
+    text-align: center;
+    width:calc(40% / 5);
+    flex-basis:calc(100% /5);
+}
+.flex div:first-child
+{
+    order: 5;
+    align-self:flex-start;
+}
+/*end flex end flex end flex flex flex flex flex flex*/
+img
+{
+  width: 160px;
+    height: 130px;
+    transition: 1.5s;
+    filter: blur(7px);               /*filter filter filter*/
+}
+img:hover
+{
+   filter: blur(0);
+}
+/*start grid start grid start grid grid grid grid grid grid */
+/*
+disply:grid;     ,display:inline-grid;
+grid-template-columns:[px , fr , auto , repeat , %]
+grid-template-rows: [px , fr , auto , repeat , %]
+grid-gap : px;
+column-gap: px;
+row-gap: px ;            gap: row-gap , column-gap ;
+grid-template-areas:   "  "    "  "     "  " ;         for parent
+grid-area:  ;                                          for element
+grid-column:  1/7   or   span(7)  or  3/span(3)  ;  =>grid-column-start  , grid-column-end
+grid-row;  1/7   or   span(7)  or  3/span(3)     ;  =>grid-column-row    , grid-row-end
+ */
+.grid
+{
+    width:500px;
+    height: 500px;
+    background: #EEE;
+    margin: 50px auto;
+    display:grid;
+    grid-template-columns: repeat(3 ,auto);
+    grid-template-rows: repeat(3 ,auto);
+    /* column-gap: 20px; */
+    /* row-gap: 50px; */
+    gap: 50px 20px;
+    justify-content: space-between;
+    align-content: space-between;
+}
+.grid div
+{
+   text-align: center;
+   background: #F00;
+   color:#FFF;
+   font-size: 60px;
+}
+/*page with grid*/
+.page
+{
+  width:1000px;
+  margin:100px auto;
+  background: #EEE;
+  grid-template-columns:repeat(5,200px);
+  grid-template-rows:50px 570px 80px;
+  display: grid;
+  height: 700px;
+  grid-template-areas:
+  "head list list list list"
+  "contact contact contact . sidebar"
+  "footer footer footer footer footer ";
+}
+.page h2
+{   grid-area: head;
+    background: #F00;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.page nav
+{
+  grid-area:list;
+  background: #0F0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page nav ul li
+{
+    list-style-type: none;
+    display: inline-block;
+    font-size: 20px;
+    margin-left: 70px;
+    margin-right: 70px;
+}
+.page section
+{
+  grid-area:contact;
+  background: #00F;
+}
+.page aside
+{
+  grid-area:sidebar;
+  background: yellow;
+}
+.page footer
+{
+  grid-area:footer;
+  background: #000;
+}
+/*grid columns and grid rows */
+.gridcolumn
+{
+   margin: 50px auto;
+    background: #DDD;
+    display: grid;
+    /* width: 500px; */
+    height: 400px;
+    grid-template-columns: repeat(auto-fill,minmax(80px,1fr));
+    grid-template-rows: repeat(4,calc(440/4));
+    gap: 20px;
+}
+.gridcolumn div
+{
+  background: #F00;
+  border-radius:10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.gridcolumn div:first-child
+{
+  grid-column: 1/6;
+}
+.gridcolumn div:last-child
+{
+  grid-column: span 2;
+}
+.gridcolumn div:nth-child(6)
+{
+  grid-row: 2/span 6;
+}
+/*transform transform transform transform transform transform*/
+/*
+transform:scale(1.2,1.3)                           تكبير و تصغير
+transform:rotate(20deg)                                     دوران
+transform:translate(10px ,10px , 10px); >=(x,y,z)                            تحريك
+transform:skew(20deg,10deg)                                ثني
+transform:matrix(scalex() skewx() skewy() scaley() translatex() translatey() )
+transform-origin:50% 50%;   transform-origin:right top;
+prespective:                                                              البعد عن الشاشة    in parent
+prespective-origin:                                                                     in parent
+backface-visibility: hidden;                                      حتي يظهر الوجه الخلفي عند الدوران
+transform-style:preserve-3d;                                      حتي يجعل الدوران ثلاثي الأبعاد
+*/
+.transform
+{
+  background:#A55750;
+  margin:50px auto;
+  width:400px;
+  height: 300px;
+  font-size: 50px;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s;
+}
+.transform:hover
+{
+ /* transform:scale(1.2,1.3) rotate(20deg) translate(10px ,10px) skew(20deg,10deg);  /*scale(x,y)*/
+ /* transform:matrix(1.2,0.4,0.3,1.3,010,10 );*/
+  /*transform-origin:50% 50%;*/
+/*  transform:rotate(20deg);*/
+  /*transform:rotate3d(1,0,1,20deg);*/
+  transform-origin: right top;
+  transform: rotatex(90deg)
+}
+/* transformation 2 transformation 2 transformation 2 transformation 2*/
+.container
+{
+  background: #DDD;
+  height: 500px;  perspective: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box
+{
+  width: 200px;
+  height: 200px;
+  position: relative;
+  transition:ease 0.3s;
+  transform-style:preserve-3d;
+}
+.box:hover
+{
+    transform:rotatey(-180deg);
+}
+.face
+{
+  color:#000;
+  width: 100%;
+  height: 100%;
+  font-size: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position:absolute;
+  top:0;
+  right: 0;
+  backface-visibility: visible;
+}
+.front
+{
+  background: #0f0;
+}
+.back
+{
+  background: #f00;
+  transform:rotateY(180deg);
+  z-index: -1;  
+}
+/*start animation start animation start animation start animation*/
+.animation
+{
+  width:100px;
+  margin: 50px auto;
+  display:flex;
+  justify-content: space-between;
+}
+.animation div
+{
+  background: #325189;
+  border-radius: 100%;
+  width:20px;
+  height: 20px;
+  animation-name: loading;
+  animation-duration: 0.3s;
+  /*animation-fill-mode:backwards;*/
+  animation-iteration-count:infinite;
+  /*animation-play-state:running;*/
+  /*animation-timing-function:ease-in-out;  */
+  animation-direction:alternate;
+}
+.animation div:nth-child(2)
+{animation-delay:0.1s;}
+.animation div:last-child
+{animation-delay:0.2s;}
+@keyframes loading
+{
+  100%   {
+    transform: translatey(-20px);
+    opacity:0.4;
+  }
+}
