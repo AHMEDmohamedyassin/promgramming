@@ -68,8 +68,12 @@
             <h6 class="collapse-header">Custom Components:</h6>
             <a class="collapse-item" href="{{route('post.create')}}">create posts</a>
             <a class="collapse-item" href="{{route('post.show')}}">view all posts</a>
+            @if (auth()->user()->UserHasRole('Admin'))
             <a class="collapse-item" href="{{route('user.create')}}">create user</a>
             <a class="collapse-item" href="{{route('user.show')}}">view all user</a>
+            <a class="collapse-item" href="{{route('role')}}">roles</a>
+            <a class="collapse-item" href="{{route('permission')}}">permissions</a>
+            @endif
           </div>
         </div>
       </li>

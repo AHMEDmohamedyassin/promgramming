@@ -58,6 +58,9 @@
             <input type="submit">
         </form>
     </div>
+    @can('view' , $user)
+
+
     <div class="card shadow mb-4">
         <div class="card-body">
     <div class="table-responsive">
@@ -82,15 +85,17 @@
                         ></td>
                     <td>{{$role->name}}</td>
                     <td>
-                        <form method="POST" action="{{route('deattach' , $role->id )}}">
-                            @csrf @method('delete')
-                            <button class="btn btn-danger">deattach</button>
+                        <form method="POST" action="{{route('attach' , $user->id )}}">
+                            @csrf @method('put')
+                            <input type="hidden" name="role" value="{{$role->id}}">
+                            <button class="btn btn-primary">attach</button>
                         </form>
                     </td>
                     <td>
-                        <form method="POST" action="{{route('attach' , $role->id)}}">
-                            @csrf @method('put')
-                            <button class="btn btn-primary">attach </button></td>
+                        <form method="POST" action="{{route('deattach' , $user->id)}}">
+                            @csrf @method('delete')
+                            <input type="hidden" name="role" value="{{$role->id}}">
+                            <button class="btn btn-danger">deattach </button></td>
                         </form>
                 </tr>
                 @endforeach
@@ -98,5 +103,6 @@
         </table>
     </div>
 </div></div>
+@endcan
     @endsection
 </x-admin-master>

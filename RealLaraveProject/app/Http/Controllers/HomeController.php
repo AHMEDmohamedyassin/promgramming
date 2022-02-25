@@ -10,6 +10,7 @@ use App\Models\Role;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
+use App\Models\Permission;
 
 class HomeController extends Controller
 {
@@ -97,7 +98,7 @@ class HomeController extends Controller
 
     public function DeletePost(){
         $post = Post::find(request()->id)->delete();
-        Storage::delete( \request('oldImage'));
+        Storage::delete(request('oldImage'));
         session(['message' => 'deleted']);
         $this->authorize('delete' , $post);
         return redirect(route('post.show' , request()->id )  );
@@ -107,6 +108,12 @@ class HomeController extends Controller
         // $user = User::find($id);
         $role = Role::all();
         $user = auth()->user();
+        return view('admin.user_profile' , compact(['user','role']));
+    }
+
+    public function UserProfileAdmin ($id){
+        $user = User::find($id);
+        $role = Role::all();
         return view('admin.user_profile' , compact(['user','role']));
     }
 
@@ -149,11 +156,90 @@ class HomeController extends Controller
 
     public function attach($id){
 
-        return redirect(route('admin'));
+        $user = User::find($id);
+        $role = Role::find(request('role'));
+        $user->role()->save($role);
+        return redirect(route('profile.admin' , $id));
     }
 
     public function deattach($id){
 
-        return redirect(route('admin'));
+        $user=User::find($id);
+        $role = Role::find(request('role'));
+        $user->role()->detach($role);
+
+        return redirect(route('profile.admin' , $id));
+    }
+
+    public function role(){
+        $redirection = 'role.add';
+        $role = Role::all();
+        $permission = Permission::all();
+        return view('admin.role' , compact(['role' , 'redirection' , 'permission']));
+    }
+
+    public function AddRole(){
+        request()->validate([
+            'name' => 'required'
+        ]);
+        $role = new Role;
+        $role -> name = request('name');
+        $role -> slug = strtolower(request('name'));
+        $role->save();
+        if(request('permission')){
+            $permission = Permission::where('name' , request('permission'))->first();
+            $role->permission()->save($permission);
+        }
+        return redirect(route('role'));
+    }
+
+    public function DeleteRole($id){
+        Role::find($id)->delete();
+        return back();
+    }
+
+    public function UpdateRole($id){
+        $redirection = 'role.edit';
+        $role = Role::all();
+        $role_name = Role::find($id)->name;
+        $permission = Permission::all();
+        return view('admin.role' , compact(['role' , 'redirection' , 'id' , 'role_name' , 'permission']));
+    }
+
+    public function editRole(){
+        $role = Role::find(request('id'));
+        if(request('name')) {
+            $role->name = request('name');
+            $role->slug = strtolower(request('name'));
+        }
+        $role->save();
+        if(request('permission')){
+            $permission = Permission::where('name' , request('permission'))->first();
+            $role->permission()->save($permission);
+        }
+        return redirect(route('role'));
+    }
+
+    public function DeleteRolePermission($role_id , $permission_id){
+        $role= Role::find($role_id);
+        $permission = Permission::find($permission_id);
+        $role->permission()->detach($permission);
+        return redirect(route('role'));
+    }
+
+    public function permission(){
+        $permission = permission::all();
+        $role = Role::all();
+        return view('admin.permission' , compact(['permission' , 'role']));
+    }
+
+    public function AddPermission(){
+        Permission::create(['name'=>request('name') , 'slug'=>strtolower(request('name')) ]);
+        return redirect(route('permission'));
+    }
+
+    public function DeletePermission($id){
+        Permission::find($id)->delete();
+        return back();
     }
 }

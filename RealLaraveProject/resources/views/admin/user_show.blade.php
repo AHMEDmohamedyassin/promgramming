@@ -38,7 +38,7 @@
                         <tbody>
                         @foreach($user as $user)
                             <tr>
-                                <td><a href="{{ route('user.profile' , $user->id ) }}">{{$user->id}}</a></td>
+                                <td><a href="{{ route('profile.admin' , $user->id ) }}">{{$user->id}}</a></td>
                                 <td>{{$user->name}}</td>
                                 <td>{{$user->email}}</td>
                                 <td>{{$user->password}}</td>
