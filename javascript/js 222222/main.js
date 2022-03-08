@@ -188,3 +188,6 @@ myparagraph.appendChild(document.createTextNode("this is the made paragraph by J
 
 myelement.appendChild(document.querySelector(".theadded")).cloneNode(true); //المفروض أنه ينسخ الparagraph ولس ينقله
 
+for(let i = 0 ; i < 10 ; i++){
+        console.log(i);
+}

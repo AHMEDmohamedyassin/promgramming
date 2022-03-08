@@ -516,4 +516,3 @@ challengefunction(true , 40 , "ahmed");
     let finalobject = Object.assign({} , firstobject , {property: 1 , property2 : 2,}); //يمكن اضافة خواص جديده و اضافة objects
     console.log(finalobject);
 
-
