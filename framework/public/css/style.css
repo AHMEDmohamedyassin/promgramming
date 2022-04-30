@@ -1,0 +1,413 @@
+:root{
+    --sitebackground : #fff;
+
+    --navBackgroundColor : #616161;
+    --navFontColor : #a50b0b;
+
+    --sidebarBackgroundColor : #616161;
+    --sidebarFontColor : #333;
+
+    --smallsidebarBackgroundColor : #ddd;
+    --smallsidebarFontColor : rgb(129, 129, 129);
+
+
+    --theExamBackgroudColor:rgb(236, 235, 235);
+    --examCollectionBackgroundcolor : #fff;
+
+    --elementViewbody : rgb(246, 246, 246);
+    --elementViewbodyFontColor : #333;
+    --elementViewFooter:rgb(214, 214, 214);
+    --elementViewFooterButtonFont : #222;
+    --elementViewFooterFont : #333;
+    --spanColor: #333;
+
+    --footerBackgroundColor : #ddd;
+}
+
+*{
+    transition: 500ms;
+}
+body{
+    background: var(--sitebackground);
+    position: relative;
+}
+.main-content-div{
+    margin-top: 80px;
+    padding-left: 110px;
+}
+
+
+/* start navbar */
+.navbar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    z-index: 5;
+    background: var(--navBackgroundColor);
+    color: var(--navFontColor);
+}
+
+.navbar i{
+    display: none;
+}
+
+/* end navbar */
+
+/* start sidebar */
+
+.container-fluid{
+    padding: 0px;
+}
+
+.sidebar{
+    display: none;
+    width: fit-content;
+    background-color: var(--sidebarBackgroundColor);
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+}
+
+.top-menu ul , .sidebar ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: fit-content;
+    padding: 0px;
+    margin-top: 70px;
+}
+.top-menu a ,.sidebar li a{
+    text-decoration: none;
+    color: var(--sidebarFontColor);
+}
+.sidebar .close{
+    color:var(--sidebarFontColor);
+}
+.top-menu li ,.sidebar li{
+    font-size: 20px;
+    font-weight: 600;
+    margin: 30px 10px;
+}
+.top-menu i ,.sidebar i{
+    font-size: 32px;
+}
+.top-menu {
+    display: none;
+}
+.top-menu ul{
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 0px 10px;
+}
+.top-menu li {
+    margin: 5px 0px;
+}
+
+.small-sidebar{
+    background: var(--smallsidebarBackgroundColor);
+    width: fit-content;
+    padding: 0;
+    position: fixed;
+    left: 0px;
+    top: 0;
+    height: 100%;
+}
+
+
+.small-sidebar ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    padding: 25px;
+    margin-top: 70px;
+}
+
+.small-sidebar li {
+    flex-basis: 100px;
+}
+
+.small-sidebar i {
+    color: var(--smallsidebarFontColor);
+    font-size: 32px;
+}
+
+.sidebar .close {
+    padding: 2px 50px;
+    margin-top: 25px;
+    color: var(--sidebarFontColor);
+}
+
+/* end sidebar */
+
+
+/* start view item  */
+.card{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.card .card-body{
+    background: var(--elementViewbody);
+    color: var(--elementViewbodyFontColor);
+}
+.card .card-footer .category ul {
+    display: inline-flex;
+}
+.card .card-footer .category ul li {
+    list-style: none;
+    font-size: 12px;
+    font-weight: 500;
+    margin-right: 5px;
+}
+.card .card-footer .category ul li::after{
+    content: " ,";
+}
+.card .card-footer .col .owner , .card .role , .card p{
+    display: inline;
+}
+.card span,
+.card .card-footer .col span {
+    font-size: 12px;
+    font-weight: 200;
+}
+.card .card-body h5{
+    margin: auto;
+    width: fit-content;
+}
+.card .links{
+    display: flex;
+}
+.card .card-footer a{
+    margin: auto;
+    padding: 1px 25px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: var(--elementViewFooterButtonFont);
+    border: #000 1px solid;
+}
+.card img {
+    width: 100px;
+}
+.card .card-body div{
+    margin: 20px 0;
+}
+
+.card .card-footer{
+    background: var(--elementViewFooter);
+    color: var(--elementViewFooterFont);
+}
+.card span{
+    color: var(--spanColor);
+}
+
+/* end view item  */
+
+/* start form  */
+.form {
+    padding: 35px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.form input{
+    margin: 20px auto;
+}
+.form .checkbox{
+    margin: 10px;
+}
+.form div{
+    margin: 30px 0;
+}
+.form div a{
+    padding: 1px 15px;
+    font-size: 10px;
+    margin-left: 20px;
+}
+ul{
+    list-style: none;
+}
+/* end form  */
+
+
+
+/*start animation*/
+.animation
+{
+    width:60px;
+    margin: 50px auto;
+    display:flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 30%;
+    right: 50%;
+    transform: translateX(50%);
+    z-index: 10;
+}
+.animation div
+{
+    background: black;
+    width: 2px;
+    height: 10px;
+    animation-name: loading;
+    animation-duration: 0.3s;
+    animation-iteration-count:infinite;
+    animation-direction:alternate;
+}
+.animation div:nth-child(2)
+{animation-delay:0.1s;}
+.animation div:last-child
+{animation-delay:0.2s;}
+@keyframes loading
+{
+    100%   {
+        transform: translatey(-20px);
+        opacity:0.4;
+    }
+}
+/*end animation*/
+
+/* start exam */
+
+.exam-detail form .row input {
+    margin-right: 20px;
+    margin-top: 20px;
+}
+
+.theexam {
+    margin: 50px 0;
+    background: var(--theExamBackgroudColor);
+    padding: 25px;
+    border-radius: 5px;
+}
+
+.theexam .collection {
+    background: var(--examCollectionBackgroundcolor);
+    padding: 25px;
+    margin: 20px 0;
+    border-radius: 5px;
+}
+
+.theexam .collection ul {
+    margin: 25px;
+}
+
+.theexam .collection ul li {
+    margin-top: 10px;
+}
+.theexam .collection button{
+    margin-top: 5px;
+}
+.theexam .collection ul li button{
+    padding: 1px 20px;
+}
+.theexam .collection .answer{  /*answer button*/
+    padding: 5px;
+}
+.theexam .question{  /*question button*/
+    margin-left: 60%;
+}
+/* end exam */
+
+/* start exam choose */
+.examchoose .card{
+    margin: 20px 0;
+    background: var(--elementViewbody);
+}
+.examchoose .card-footer{
+    display: flex;
+    justify-content: space-between;
+    background: var(--elementViewFooter);
+}
+/* end exam choose */
+
+/* start code */
+
+.codeview .card {
+    padding: 20px;
+    width:max-content;
+}
+
+.codeview .card div , .codeview .card span {
+    display: inline-block;
+}
+
+.codeview .card .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+.codeview .card .button a{
+    padding: 1px 20px;
+}
+
+/* end code */
+
+/* start search */
+
+.search-form div {
+    padding-right: 10px;
+}
+
+.search-form div button{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* end search */
+
+/* start color columns */
+.colorrow{
+    display: none;
+    justify-content: space-around;
+    margin: 0;
+}
+.colorcolumns{
+    background-color: rgb(233 233 233);
+    margin: 0 5px;
+    border-radius: 5px;
+    border: rgb(233 , 233 , 233) solid 1px;
+}
+
+#closeColorButton{
+    font-size: 50px;
+    color: #f00;
+    padding: 15px;
+    display: none;
+}
+#openColorButton{
+    font-size: 45px;
+    padding: 20px;
+    color: #0d6efd;
+}
+#openColorButton::after{
+    content: 'فتح سمات لوحة التحكم';
+    font-size: 15px;
+    word-spacing: 2px;
+}
+
+/* end color columns */
+
+
+/* start footer */
+footer{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    padding: 15px;
+    background: var(--footerBackgroundColor);
+    width: 100%;
+}
+
+footer div{
+    width: fit-content;
+    margin: auto;
+  }
+
+  /* end footer */
